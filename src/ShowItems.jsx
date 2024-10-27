@@ -1,4 +1,7 @@
 function ShowItems({ _data, _addToCart }) {
+  if (!Array.isArray(_data)) {
+    _data = [_data];
+  }
   return (
     <div key="items">
       {_data &&
@@ -8,7 +11,7 @@ function ShowItems({ _data, _addToCart }) {
               <div key={"item_" + item.id}>
                 <h5>{item.title}</h5>
                 <img
-                  src={item.images[0]}
+                  src={item.image}
                   alt="item.title"
                   style={{ height: "256px", width: "256px" }}
                 />
