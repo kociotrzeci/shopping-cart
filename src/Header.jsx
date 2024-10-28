@@ -5,20 +5,17 @@ import { useEffect } from "react";
 import ShowItems from "./ShowItems";
 export default function HomePage() {
   const [cart, modifyCart] = useState([]);
-  function addToCart(_item) {
-    return modifyCart(cart.concat[_item]);
-  }
 
   return (
     <>
       <div className="header" key="header">
         <h1>Header, value</h1>
         <div>
-          <p>in cart</p>
+          <p>in cart {cart.length} items</p>
           <Link to="/cart"></Link>
         </div>
       </div>
-      <Outlet context={[]} />
+      <Outlet context={[cart, modifyCart]} />
     </>
   );
 }

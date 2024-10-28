@@ -5,26 +5,43 @@ import { useEffect } from "react";
 import ShowItems from "./ShowItems";
 import { askApi } from "./getItems";
 export default function Shop() {
-  const [count, setCount] = useOutletContext();
+  const [cart, modifyCart] = useOutletContext();
   const increment = () => setCount((c) => c + 1);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  async () => {
-    setData(await askApi());
+  const addToCart = (item) => {
+    modifyCart(cart.concat([item]));
+    console.log("item added");
+    console.log(cart);
   };
+
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products", { mode: "cors" })
+      .then((response) => {
+        if (response.status >= 400) {
+          throw new Error("server error");
+        }
+        return response.json();
+      })
+      .then((response) => {
+        setData(response);
+        setLoading(false);
+      })
+      .catch((error) => setError(error))
+      .finally(() => setLoading(false));
+  });
+
   return (
     <div>
-      <button onClick={increment}>{count}</button>
       <Link to="/cart">
         <button>GO TO CART</button>
       </Link>
-      <ShowItems
-        _data={data}
-        _addToCart={() => {
-          return 0;
-        }}
-      />
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <ShowItems _data={data} _addToCart={addToCart} />
+      )}
     </div>
   );
 }

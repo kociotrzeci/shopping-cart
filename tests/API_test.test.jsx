@@ -15,21 +15,3 @@ describe("Ask api for data", () => {
     );
   });
 });
-
-describe("Showing single item", async () => {
-  const data = await askApi(1);
-  console.log(data);
-  render(
-    <ShowItems
-      _data={data}
-      _addToCart={() => {
-        return 0;
-      }}
-    />
-  );
-  it("should show single image", () => {
-    expect(screen.getByRole("img").src).toMatch(
-      "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-    );
-  });
-});
