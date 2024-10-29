@@ -5,12 +5,11 @@ async function askApi(_item) {
   } else {
     response = await fetch(`https://fakestoreapi.com/products`);
   }
+  if (!response.ok) {
+    throw new Error("Api fetch error");
+  }
   const data = await response.json();
-  return await data;
-}
-
-function getItems(_item) {
-  const data = askApi(_item);
   return data;
 }
-export { getItems, askApi };
+
+export { askApi };

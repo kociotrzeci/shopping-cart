@@ -3,10 +3,9 @@ import { useOutletContext } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 import ShowItems from "./ShowItems";
-import { askApi } from "./getItems";
+import { askApi } from "./askApi";
 export default function Shop() {
   const [cart, modifyCart] = useOutletContext();
-  const increment = () => setCount((c) => c + 1);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -17,20 +16,18 @@ export default function Shop() {
   };
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products", { mode: "cors" })
-      .then((response) => {
-        if (response.status >= 400) {
-          throw new Error("server error");
-        }
-        return response.json();
-      })
-      .then((response) => {
+    const fetchData = async () => {
+      try {
+        const response = await askApi();
         setData(response);
+      } catch (error) {
+        setError(error);
+      } finally {
         setLoading(false);
-      })
-      .catch((error) => setError(error))
-      .finally(() => setLoading(false));
-  });
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
     <div>
@@ -39,6 +36,8 @@ export default function Shop() {
       </Link>
       {loading ? (
         <p>Loading...</p>
+      ) : error ? (
+        <h3>ERROR</h3>
       ) : (
         <ShowItems _data={data} _addToCart={addToCart} />
       )}

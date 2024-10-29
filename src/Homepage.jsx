@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { getItems } from "./getItems";
 export default function HomePage() {
   return (
     <div>

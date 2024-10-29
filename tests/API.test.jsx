@@ -1,8 +1,5 @@
-import ShowItems from "../src/showItems";
-import { getItems, askApi } from "../src/getItems";
+import { askApi } from "../src/askApi";
 import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
-import { json } from "react-router-dom";
 describe("Ask api for data", () => {
   it("should get response from API", async () => {
     const data = await askApi();
