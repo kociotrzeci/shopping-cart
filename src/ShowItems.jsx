@@ -20,6 +20,6 @@ function ShowItems({ _data, _addToCart }) {
 
 ShowItems.propTypes = {
   _data: PropTypes.array.isRequired,
-  _addToCart: PropTypes.func.isRequired,
+  _addToCart: PropTypes.func,
 };
 export default ShowItems;
