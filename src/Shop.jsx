@@ -6,13 +6,21 @@ import ShowItemsShop from "./ShowItemsShop";
 import { askApi } from "./askApi";
 export default function Shop() {
   const [cart, modifyCart] = useOutletContext();
+  console.log(cart);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const addToCart = (item) => {
-    modifyCart(cart.concat([item]));
-    console.log("item added");
-    console.log(cart);
+    const existingItem = cart.find((cartItem) => cartItem.id === item.id);
+    if (!existingItem) {
+      modifyCart(cart.concat([{ ...item, count: 1 }]));
+      console.log("New item added");
+      console.log(cart);
+    } else {
+      existingItem.count++;
+      console.log("Item count updated");
+      console.log(cart);
+    }
   };
 
   useEffect(() => {
