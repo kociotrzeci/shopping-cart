@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
-import ShowItems from "./ShowItems";
+import ShowItemsShop from "./ShowItemsShop";
 import { askApi } from "./askApi";
 export default function Shop() {
   const [cart, modifyCart] = useOutletContext();
@@ -39,7 +39,7 @@ export default function Shop() {
       ) : error ? (
         <h3>ERROR</h3>
       ) : (
-        <ShowItems _data={data} _addToCart={addToCart} />
+        <ShowItemsShop _data={data} _addToCart={addToCart} />
       )}
     </div>
   );

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-function ShowItems({ _data, _addToCart }) {
+function ShowItemsShop({ _data, _addToCart }) {
   if (!Array.isArray(_data)) {
     _data = [_data];
   }
@@ -18,8 +18,8 @@ function ShowItems({ _data, _addToCart }) {
   );
 }
 
-ShowItems.propTypes = {
+ShowItemsShop.propTypes = {
   _data: PropTypes.array.isRequired,
   _addToCart: PropTypes.func,
 };
-export default ShowItems;
+export default ShowItemsShop;

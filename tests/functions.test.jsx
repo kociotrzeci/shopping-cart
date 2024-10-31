@@ -1,4 +1,4 @@
-import ShowItems from "../src/showItems";
+import ShowItems from "../src/ShowItemsShop";
 import { beforeAll, describe, expect, it } from "vitest";
 import { askApi } from "../src/askApi";
 import { render, screen } from "@testing-library/react";

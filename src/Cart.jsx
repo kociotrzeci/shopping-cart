@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
-import ShowItems from "./ShowItems";
+import ShowItemsCart from "./ShowItemsCart";
 import { useEffect, useState } from "react";
 export default function Cart() {
   const [cart, modifyCart] = useOutletContext();
@@ -29,8 +29,8 @@ export default function Cart() {
     <div>
       <Link to="/shop">
         <button>GO TO SHOP</button>
-        <ShowItems _data={cleanCart} />
       </Link>
+      <ShowItemsCart _data={cleanCart} _addToCart={modifyCart} />
     </div>
   );
 }

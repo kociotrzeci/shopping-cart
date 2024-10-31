@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 export default function HomePage() {
   const [cart, modifyCart] = useState([]);
-
+  const [cleanCart, modifyCleanCart] = useState([]);
   return (
     <>
       <div className="header" key="header">
@@ -13,7 +13,7 @@ export default function HomePage() {
           <Link to="/cart"></Link>
         </div>
       </div>
-      <Outlet context={[cart, modifyCart]} />
+      <Outlet context={[cart, modifyCart, cleanCart, modifyCleanCart]} />
     </>
   );
 }
