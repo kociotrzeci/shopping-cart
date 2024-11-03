@@ -5,12 +5,15 @@ function ShowItemsShop({ _data, _addToCart }) {
   }
 
   return (
-    <div key="items">
+    <div key="items" className="shop-items">
       {_data &&
         _data.map((item) => (
-          <div key={"item_" + item.id}>
+          <div key={"item_" + item.id} className="item-container">
+            <div>
+              <img src={item.image} alt={item.title} />
+            </div>
             <h5>{item.title}</h5>
-            <img src={item.image} alt={item.title} style={{ width: "256px" }} />
+            <p1>Price: {item.price}</p1>
             <button onClick={() => _addToCart(item)}>ADD ITEM</button>
           </div>
         ))}

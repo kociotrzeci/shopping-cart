@@ -19,7 +19,7 @@ function ShowItemsCart({ _data, _modifyCartContent }) {
     <div key="items">
       {_data &&
         _data.map((item) => (
-          <div key={"item_" + item.id}>
+          <div key={"item_" + item.id} className="item-container">
             <h5>{item.title}</h5>
             <img src={item.image} alt={item.title} style={{ width: "256px" }} />
             <button onClick={() => _modifyCartContent(item)}>ADD ITEM</button>
