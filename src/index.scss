@@ -21,16 +21,24 @@
   .item-container {
     flex: 1 1 250px;
     display: grid;
+    align-content: space-between;
     border: 1px solid black;
     max-width: 350px;
     min-width: 200px;
     div {
       display: flex;
       width: 100%;
-      object-fit: contain;
+      height: 100%;
+      align-self: center;
       img {
         width: 100%;
+        height: auto;
+        object-fit: scale-down;
       }
+    }
+    .item-info {
+      display: flex;
+      flex-direction: column;
     }
   }
 }

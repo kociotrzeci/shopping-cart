@@ -12,9 +12,11 @@ function ShowItemsShop({ _data, _addToCart }) {
             <div>
               <img src={item.image} alt={item.title} />
             </div>
-            <h5>{item.title}</h5>
-            <p1>Price: {item.price}</p1>
-            <button onClick={() => _addToCart(item)}>ADD ITEM</button>
+            <div className="item-info">
+              <h5>{item.title}</h5>
+              <p1>Price: {item.price}</p1>
+              <button onClick={() => _addToCart(item)}>ADD ITEM</button>
+            </div>
           </div>
         ))}
     </div>
