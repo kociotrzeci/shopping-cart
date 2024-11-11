@@ -1,28 +1,16 @@
 # Shopping cart
 
+Project is website of example shop, using APIs to fetch items, powered by REACT router
+
 ## What pages my website needs
 
-- main
-- items
+Application contains 3 webpages:
+
+- home
+- shop
 - cart
-- specific item page (?)
+  Header contains state of application, and passing it to child elements
 
-## How to make this
+## Tests
 
-### Elements
-
-- [x] route needed
-- [ ] no route needed
-
-- [x] Main.jsx
-- [x] Homepage.jsx
-- [x] Shop.jsx
-- [x] Item.jsx
-- [ ] Routes.jsx - routes here
-- [ ] Header.jsx - everywhere
-- [ ] ItemCard.jsx
-- [ ] Cart.jsx
-
-- ApiFeth.jsx
-
-- array of item's objects
+Unfortunetly, i dont know easy way to test website build by REACT router, so tests only cover API fetch functionality

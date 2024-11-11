@@ -9,7 +9,7 @@ function ShowItemsShop({ _data, _addToCart }) {
       {_data &&
         _data.map((item) => (
           <div key={"item_" + item.id} className="item-container">
-            <div>
+            <div className="image-container">
               <img src={item.image} alt={item.title} />
             </div>
             <div className="item-info">

@@ -6,10 +6,10 @@ export default function Cart() {
 
   return (
     <div>
-      <Link to="/shop">
-        <button>GO TO SHOP</button>
-      </Link>
-      <ShowItemsCart _data={cart} _modifyCartContent={modifyCart} />
+      <div className="panel left shop-items">
+        <ShowItemsCart _data={cart} _modifyCartContent={modifyCart} />
+      </div>
+      <div className="panel right"> </div>
     </div>
   );
 }

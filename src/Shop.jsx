@@ -39,9 +39,6 @@ export default function Shop() {
 
   return (
     <div>
-      <Link to="/cart">
-        <button>GO TO CART</button>
-      </Link>
       {loading ? (
         <p>Loading...</p>
       ) : error ? (

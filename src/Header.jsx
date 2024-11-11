@@ -13,11 +13,14 @@ export default function HomePage() {
       <div className="header" key="header">
         <h1>Header</h1>
         <div>
-          <p>in cart {itemsInCart()} items</p>
-          <Link to="/cart"></Link>
+          <Link to="/cart">
+            <p>in cart {itemsInCart()} items</p>
+          </Link>
         </div>
       </div>
-      <Outlet context={[cart, modifyCart]} />
+      <div className="content">
+        <Outlet context={[cart, modifyCart]} />
+      </div>
     </>
   );
 }
