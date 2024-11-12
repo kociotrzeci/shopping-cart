@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import Button from "@mui/material/Button";
 function ShowItemsShop({ _data, _addToCart }) {
   if (!Array.isArray(_data)) {
     _data = [_data];
@@ -14,8 +15,10 @@ function ShowItemsShop({ _data, _addToCart }) {
             </div>
             <div className="item-info">
               <h5>{item.title}</h5>
-              <p1>Price: {item.price}</p1>
-              <button onClick={() => _addToCart(item)}>ADD ITEM</button>
+              <p>Price: {item.price}</p>
+              <Button variant="contained" onClick={() => _addToCart(item)}>
+                ADD ITEM
+              </Button>
             </div>
           </div>
         ))}
