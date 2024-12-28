@@ -37,7 +37,7 @@ export default function HomePage() {
       <div className="content">
         <Outlet context={[cart, modifyCart]} />
       </div>
-      <div className="footer">lorem ipsum</div>
+      <div className="footer">made by kociotrzeci</div>
     </>
   );
 }
