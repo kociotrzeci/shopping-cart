@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-$primary-color: black * {
+$color-primary: navy;
+$color-primary-text: white;
+$color-secondary: rgb(222, 231, 255);
+$color-secondary-text: black;
+
+* {
   font-family: Roboto;
 }
 body {
@@ -15,6 +20,42 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  .header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    height: 4rem;
+    align-self: stretch;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-primary;
+    .header-content {
+      width: 100%;
+      max-width: 1300px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      a:visited, a{
+        color: $color-primary-text;
+        text-decoration: none;
+      }
+      .first{
+        gap:3rem;
+        align-items: center;
+        a{
+          align-items: center;
+          p{
+            font-size: 1.2rem;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  }
   .content {
     max-width: 1300px;
     justify-self: center;
@@ -52,32 +93,6 @@ body {
           }
         }
       }
-    }
-  }
-  .header {
-    position: sticky;
-    top: 0;
-    display: flex;
-    height: 4rem;
-    align-self: stretch;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(167, 167, 167);
-    .header-content {
-      background-color: red;
-      width: 100%;
-      max-width: 1300px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      a {
-        color: black;
-        text-decoration: none;
-      }
-    }
-    * {
-      margin: 0;
-      padding: 0;
     }
   }
 }

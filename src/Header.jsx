@@ -16,9 +16,9 @@ export default function HomePage() {
     <>
       <div className="header" key="header">
         <div className="header-content">
-          <div className="flex-row">
-            <Link to="/home" className="flex-row">
-              <h1>SUPER SHOP</h1>
+          <div className="flex-row first">
+            <Link to="/homepage" className="flex-row">
+              <h1>TEMPLATE SHOP</h1>
             </Link>
             <Link className="flex-row" to="/shop">
               <StoreIcon fontSize="large"></StoreIcon>
