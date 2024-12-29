@@ -12,12 +12,11 @@ export default function Cart() {
       <div className="panel left shop-items">
         <ShowItemsCart _data={cart} _modifyCartContent={modifyCart} />
       </div>
-       <div className="panel right shop-items">
+       <div className="panel-right">
         <h2>Total price</h2>
         <h3>{calculateTotalPrice()}</h3>
-
+<button className="checkout">CHECKOUT =></button>
        </div>
-      <div className="panel right"> </div>
     </div>
   );
 }

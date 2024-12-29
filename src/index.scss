@@ -75,6 +75,17 @@ body {
     
     }
   }
+  .cart{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    .panel-right{
+      position: fixed;
+      top: 30%;
+      right: 10%;
+
+    }
+  }
   .footer{
       margin-top: auto;
       width: 100vw;
@@ -121,8 +132,12 @@ button{
   font-size: 1rem;
   font-weight: 700;
   border-radius: 1rem;
-}
 
+}
+button.checkout{
+  font-size: 2rem;
+  padding: 1rem;
+}
 .item-container {
   flex: 1 1 250px;
   display: flex;
