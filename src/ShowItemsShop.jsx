@@ -16,9 +16,9 @@ function ShowItemsShop({ _data, _addToCart }) {
             <div className="item-info">
               <h5>{item.title}</h5>
               <p>Price: {item.price}</p>
-              <Button variant="contained" onClick={() => _addToCart(item)}>
+              <button onClick={() => _addToCart(item)}>
                 ADD ITEM
-              </Button>
+              </button>
             </div>
           </div>
         ))}

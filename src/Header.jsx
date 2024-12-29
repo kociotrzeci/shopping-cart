@@ -5,6 +5,7 @@ import { IconButton, Badge } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import HomeIcon from "@mui/icons-material/Home";
 import StoreIcon from "@mui/icons-material/Store";
+import gitImage from "./github-mark.svg"
 export default function HomePage() {
   const [cart, modifyCart] = useState([]);
   const itemsInCart = () => {
@@ -37,7 +38,10 @@ export default function HomePage() {
       <div className="content">
         <Outlet context={[cart, modifyCart]} />
       </div>
-      <div className="footer">made by kociotrzeci</div>
+      <div className="footer">
+        <p>made by {'\u00A0'}</p>
+        <a href="https://github.com/kociotrzeci"><img src={gitImage}></img>kociotrzeci</a>
+      </div>
     </>
   );
 }

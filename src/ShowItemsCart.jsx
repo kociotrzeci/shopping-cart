@@ -21,16 +21,17 @@ function ShowItemsCart({ _data, _modifyCartContent }) {
         _data.map((item) => (
           <div key={"item_" + item.id} className="item-container">
             <h5>{item.title}</h5>
-            <img src={item.image} alt={item.title} style={{ width: "256px" }} />
+            <div class="image-container"><img src={item.image} alt={item.title} style={{ width: "256px" }} /></div>
             <button onClick={() => _modifyCartContent(item)}>ADD ITEM</button>
             <div
               className="item-count-selector"
               style={{ display: "flex", flexDirection: "row" }}
-            >
-              <button onClick={() => modifyCart(item, "-")}>-</button>
-              <p>{item.count}</p>
-              <button onClick={() => modifyCart(item, "+")}>+</button>
-            </div>
+            >               
+                <button id="add" onClick={() => modifyCart(item, "-")}>-</button>
+                <p id="count">{item.count}</p>
+                <button id="add" onClick={() => modifyCart(item, "+")}>+</button>
+                <p id="item-price">Price: {item.count * item.price}</p>              
+              </div>
           </div>
         ))}
     </div>
