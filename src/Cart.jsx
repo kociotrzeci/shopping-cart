@@ -13,7 +13,7 @@ export default function Cart() {
         <ShowItemsCart _data={cart} _modifyCartContent={modifyCart} />
       </div>
        <div className="panel-right">
-        <h2>Total price</h2>
+        <h2>TOTAL PRICE</h2>
         <h3>{calculateTotalPrice()}</h3>
 <button className="checkout">CHECKOUT =></button>
        </div>

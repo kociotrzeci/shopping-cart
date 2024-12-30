@@ -22,7 +22,6 @@ function ShowItemsCart({ _data, _modifyCartContent }) {
           <div key={"item_" + item.id} className="item-container">
             <h5>{item.title}</h5>
             <div class="image-container"><img src={item.image} alt={item.title} style={{ width: "256px" }} /></div>
-            <button onClick={() => _modifyCartContent(item)}>ADD ITEM</button>
             <div
               className="item-count-selector"
               style={{ display: "flex", flexDirection: "row" }}
