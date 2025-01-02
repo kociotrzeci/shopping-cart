@@ -12,12 +12,16 @@ export default function Shop() {
   const [error, setError] = useState(null);
   const addToCart = (item) => {
     const existingItem = cart.find((cartItem) => cartItem.id === item.id);
+
     if (!existingItem) {
       modifyCart(cart.concat([{ ...item, count: 1 }]));
       console.log("New item added");
       console.log(cart);
     } else {
-      existingItem.count++;
+      const itemId = cart.findIndex((cartItem) => cartItem.id === item.id);
+      const cartCopy = [...cart];
+      cartCopy[itemId].count++;
+      modifyCart(cartCopy);
       console.log("Item count updated");
       console.log(cart);
     }
