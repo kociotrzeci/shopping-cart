@@ -3,7 +3,7 @@ $color-primary: navy;
 $color-primary-text: white;
 $color-secondary: rgb(86, 116, 207);
 $color-secondary-text: black;
-
+$max-width: 1300px;
 * {
   font-family: Roboto;
 }
@@ -33,21 +33,22 @@ body {
     background-color: $color-primary;
     .header-content {
       width: 100%;
-      max-width: 1300px;
+      max-width: $max-width;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       margin: 1rem;
-      a:visited, a{
+      a:visited,
+      a {
         color: $color-primary-text;
         text-decoration: none;
       }
-      .first{
-        gap:3rem;
+      .first {
+        gap: 3rem;
         align-items: center;
-        a{
+        a {
           align-items: center;
-          p{
+          p {
             font-size: 1.2rem;
             font-weight: 500;
           }
@@ -59,11 +60,13 @@ body {
       padding: 0;
     }
   }
+
   .content {
-    max-width: 1300px;
-    min-width: 90vw;
-    justify-self: center;
+    max-width: $max-width;
     display: flex;
+    flex: 0 1 auto;
+    justify-self: center;
+    align-items: center;
     margin: 1rem;
     margin-top: 0;
     padding: 1rem;
@@ -73,14 +76,14 @@ body {
       flex-wrap: wrap;
       gap: 35px;
       justify-content: space-around;
-    
     }
   }
-  .cart{
+  .cart {
     display: grid;
     width: 100%;
+    max-width: $max-width;
     grid-template-columns: 1fr 1fr;
-    .panel-right{
+    .panel-right {
       position: fixed;
       top: 30%;
       right: 10%;
@@ -89,37 +92,36 @@ body {
       border-radius: 0.2rem;
     }
   }
-  .footer{
-      margin-top: auto;
-      width: 100vw;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      background-color: $color-primary;
-      justify-content: center;
+  .footer {
+    margin-top: auto;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: $color-primary;
+    justify-content: center;
+    color: $color-primary-text;
+    padding: 0.5em;
+    align-items: center;
+    p {
+      padding: 0em;
+      margin: 0.2em;
+      margin-right: 0;
+    }
+    a {
       color: $color-primary-text;
-      padding: 0.5em;
+      text-decoration: none;
+      display: flex;
+      text-align: center;
+      align-content: center;
       align-items: center;
-      p {
-        padding: 0em;
-        margin: 0.2em;
-        margin-right: 0;
+      img {
+        height: 1.3em;
+        filter: invert(100%);
+        margin-right: 5px;
       }
-      a {
-        color: $color-primary-text;
-        text-decoration: none;
-        display: flex;
-        text-align: center;
-        align-content: center;
-        align-items: center;
-        img {
-          height: 1.3em;
-          filter: invert(100%) ;
-          margin-right: 5px;
-        }
-      }
+    }
   }
-  
 }
 .flex-row {
   display: flex;
@@ -129,15 +131,14 @@ body {
   display: flex;
   flex-direction: row;
 }
-button{
+button {
   background-color: $color-primary;
   color: $color-primary-text;
   font-size: 1rem;
   font-weight: 700;
   border-radius: 1rem;
-
 }
-button.checkout{
+button.checkout {
   font-size: 2rem;
   padding: 1rem;
   width: 100%;
@@ -150,7 +151,7 @@ button.checkout{
   align-items: center;
   max-width: 400px;
   min-width: 250px;
-  h5{
+  h5 {
     font-size: 1rem;
   }
   .image-container {
@@ -167,18 +168,18 @@ button.checkout{
       margin-bottom: 1rem;
     }
   }
-  .item-count-selector{
+  .item-count-selector {
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
-    #add{
+    #add {
       margin-right: 0.5rem;
       margin-left: 0.5rem;
       width: 2rem;
       height: 2rem;
     }
-    p{
+    p {
       padding: 0.3rem;
     }
   }
@@ -189,38 +190,38 @@ button.checkout{
     h5 {
       height: 2rem;
     }
-    p{
+    p {
       margin: 0;
     }
   }
 }
 
-@media (max-width:850px){
-#root{
-  .header {
-    .header-content {
-      padding-left: 1rem;
-      padding-right: 1rem;
+@media (max-width: 850px) {
+  #root {
+    .header {
+      .header-content {
+        padding-left: 1rem;
+        padding-right: 1rem;
 
-      .first{
-        gap:1rem;
-        h1{
-          font-size: 1.5rem;
-        }
-        a{
-          p{
-            font-size: 1rem;
+        .first {
+          gap: 1rem;
+          h1 {
+            font-size: 1.5rem;
+          }
+          a {
+            p {
+              font-size: 1rem;
+            }
           }
         }
       }
     }
-  }
-  .cart{
-    display: flex;
-    flex-direction: column;
-    .panel-right{
-      position: static;
+    .cart {
+      display: flex;
+      flex-direction: column;
+      .panel-right {
+        position: static;
+      }
     }
   }
-}
 }
